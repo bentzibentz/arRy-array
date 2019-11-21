@@ -35,6 +35,15 @@ const arr = [
 ]
 
 insertItem(arr, 1, {"id": 3, "name": "Moritz Pauls"});
+
+// console.log(arr);
+/*
+[
+    { "id": 1, "name": "Max Mustermann"},
+    {"id": 3, "name": "Moritz Pauls"},
+    { "id": 2, "name": "Karla Kulunder"}
+]
+*/
 ```
 
 #### Get item in array by property value
