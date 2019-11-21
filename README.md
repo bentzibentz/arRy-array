@@ -130,5 +130,7 @@ Remove all duplicate items from array by property value, except first item.
 removeDuplicate(array, property)
 ```
 
+MOre usefull functions comming soon!
+
 Copyright (c) 2019 fabian bentz.
 Released under the [MIT](LICENSE) license.
