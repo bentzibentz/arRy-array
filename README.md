@@ -36,8 +36,9 @@ const arr = [
 
 insertItem(arr, 1, {"id": 3, "name": "Moritz Pauls"});
 
-// console.log(arr);
 /*
+console.log(arr);
+
 [
     { "id": 1, "name": "Max Mustermann"},
     {"id": 3, "name": "Moritz Pauls"},
