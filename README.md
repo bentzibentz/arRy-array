@@ -7,11 +7,11 @@ arRy is a modular and lightweight ES6 array library to simplify array modificati
 Pull it in through npm or yarn:
 
 ```bash
-npm install arRy
+npm install arry-array
 ```
 
 ```bash
-yarn add arRy
+yarn add arry-array
 ```
 
 ## Usage
