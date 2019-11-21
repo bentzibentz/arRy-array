@@ -2,9 +2,19 @@ arRy
 =====
 arRy is a modular ES6 simplified array modification library.
 
+## Installation
 
-Copyright (c) 2019 fabian bentz.
-Released under the [MIT](LICENSE) license.
+Pull it in through npm or yarn:
+
+```bash
+npm install arRy
+```
+
+```bash
+yarn add arRy
+```
+
+## Usage
 
 #### Sort items
 Sort items in array by defined property.
@@ -69,3 +79,6 @@ Remove all duplicate items from array by property value, except first item.
 ```javascript
 removeDuplicate(array, property)
 ```
+
+Copyright (c) 2019 fabian bentz.
+Released under the [MIT](LICENSE) license.
