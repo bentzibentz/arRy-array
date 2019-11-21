@@ -1,6 +1,6 @@
 const getObjectByValue = (array, key, value) => {
 
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || typeof value !== 'string' ) {
+    if ( !array || 0 >= array.length || !key || typeof key !== 'string' || !value ) {
         return null;
     }
 

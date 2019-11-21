@@ -24,7 +24,7 @@ function _nonIterableSpread() {
 }
 
 var removeObjectByValue = function removeObjectByValue(array, key, value) {
-  if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || typeof value !== 'string') {
+  if (!array || 0 >= array.length || !key || typeof key !== 'string') {
     return null;
   }
   var index = array.findIndex(function (obj) {
@@ -44,7 +44,7 @@ var insertAtIndex = function insertAtIndex(array, index) {
 };
 
 var getObjectByValue = function getObjectByValue(array, key, value) {
-  if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || typeof value !== 'string') {
+  if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value) {
     return null;
   }
   return array.filter(function (obj) {
@@ -53,7 +53,7 @@ var getObjectByValue = function getObjectByValue(array, key, value) {
 };
 
 var updateObjectByKeyValue = function updateObjectByKeyValue(array, key, value, prop, data) {
-  if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || typeof value !== 'string' || !prop || typeof prop !== 'string' || !data || typeof data !== 'string') {
+  if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || !prop || typeof prop !== 'string' || !data) {
     return null;
   }
   var updateObj = array.find(function (obj) {
@@ -61,6 +61,15 @@ var updateObjectByKeyValue = function updateObjectByKeyValue(array, key, value, 
   });
   updateObj[prop] = data;
   return array;
+};
+
+var sortObjectsByKeyValue = function sortObjectsByKeyValue(array, key, sortBy) {
+  if (!array || 0 >= array.length || !key || typeof key !== 'string') {
+    return null;
+  }
+  return array.sort(function (a, b) {
+    return a[key] > b[key] ? 1 : -1;
+  });
 };
 
 var removeDuplicateObjectByValue = function removeDuplicateObjectByValue(array, key) {
@@ -109,4 +118,4 @@ var getDuplicateObjectsByValue = function getDuplicateObjectsByValue(array, key)
   });
 };
 
-export { getDuplicateObjectsByValue, getObjectByValue, insertAtIndex, removeDuplicateObjectByValue, removeDuplicateObjectsByValue, removeObjectByValue, updateObjectByKeyValue };
+export { getDuplicateObjectsByValue, getObjectByValue, insertAtIndex, removeDuplicateObjectByValue, removeDuplicateObjectsByValue, removeObjectByValue, sortObjectsByKeyValue, updateObjectByKeyValue };

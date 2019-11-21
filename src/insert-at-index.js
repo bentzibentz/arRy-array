@@ -1,6 +1,6 @@
 const insertAtIndex = (array, index, ...newItems) => {
 
-    if (!array || 0 >= array.length || !index || typeof index !== 'string' || !newItems ) {
+    if ( !array || 0 >= array.length || !index || typeof index !== 'string' || !newItems ) {
         return null;
     }
 
