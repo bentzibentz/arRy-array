@@ -1,7 +1,7 @@
 {
-  "name": "array",
+  "name": "arry",
   "version": "0.0.1",
-  "description": "arrAy is a modular ES6 simplified array modification library.",
+  "description": "arRy is a modular ES6 simplified array modification library.",
   "repository": {
     "type": "git",
     "url": "git@github.com:bentzibentz/arrAy.git"
@@ -19,10 +19,10 @@
     "modification",
     "es6"
   ],
-  "main": "dist/arrAy.js",
-  "browser": "dist/arrAy.min.js",
-  "module": "dist/arrAy.mjs",
-  "test": "test/arrAy.mjs",
+  "main": "dist/arRy.js",
+  "browser": "dist/arRy.min.js",
+  "module": "dist/arRy.mjs",
+  "test": "test/arRy.mjs",
   "files": [
     "dist/**/*"
   ],
@@ -58,7 +58,7 @@
     "build:test": "rollup --config=test/rollup.config.js --file=test/build.js test/index.js",
     "dev": "karma start",
     "lint": "xo",
-    "size": "size-limit --limit 2.8KB dist/arrAy.js",
+    "size": "size-limit --limit 2.8KB dist/arRy.js",
     "test": "npm run lint && karma start --single-run",
     "test:browserstack": "npm run build:test && browserstack-runner",
     "watch": "rollup --config --watch"

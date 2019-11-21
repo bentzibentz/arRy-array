@@ -1,6 +1,6 @@
-arrAy
+arRy
 =====
-arrAy is a modular ES6 simplified array modification library.
+arRy is a modular ES6 simplified array modification library.
 
 
 Copyright (c) 2019 fabian bentz.

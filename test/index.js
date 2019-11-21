@@ -6,7 +6,7 @@ import {
     getDuplicateObjectsByValue,
     removeDuplicateObjectsByValue,
     removeDuplicateObjectByValue
-} from './arrAy.mjs';
+} from './arRy.mjs';
 
 const testArr = [
     {"id":"88","name":"Lets go testing"},
