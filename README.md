@@ -1,6 +1,6 @@
 arRy
 =====
-arRy is a modular ES6 simplified array modification library.
+arRy is a modular and lightweight ES6 array library to simplify array modification operations.
 
 ## Installation
 
@@ -22,10 +22,60 @@ Sort items in array by defined property.
 sortItems(array, property)
 ```
 
+##### Example
+
+```javascript
+import { sortItems } from 'arRy';
+
+const arr = [
+    { "id": 1, "name": "Max Mustermann"},
+    { "id": 4, "name": "Karla Kulunder"},
+    { "id": 3, "name": "Moritz Pauls" },
+    { "id": 2, "name": "Franka Frank" }
+]
+
+sortItems(arr, 'id');
+
+console.log(arr);
+/*
+[
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Franka Frank" },
+    { "id": 3, "name": "Moritz Pauls" },
+    { "id": 4, "name": "Karla Kulunder"}
+]
+*/
+```
+
+
 #### Remove item
 Remove item from array by defined value of property.
 ```javascript
 removeItem(array, property, value)
+```
+
+##### Example
+
+```javascript
+import { removeItem } from 'arRy';
+
+const arr = [
+    { "id": 1, "name": "Max Mustermann"},
+    { "id": 2, "name": "Karla Kulunder"},
+    { "id": 3, "name": "Moritz Pauls" },
+    { "id": 4, "name": "Franka Frank" }
+]
+
+removeItem(arr, 'id', 3);
+
+console.log(arr);
+/*
+[
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 4, "name": "Franka Frank"  }
+]
+*/
 ```
 
 #### Insert item
@@ -40,8 +90,8 @@ insertItem(array, index, ...items)
 import { insertItem } from 'arRy';
 
 const arr = [
-    { "id": 1, "name": "Max Mustermann"},
-    { "id": 2, "name": "Karla Kulunder"}
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" }
 ]
 
 insertItem(arr, 1, {"id": 3, "name": "Moritz Pauls"});
@@ -49,9 +99,9 @@ insertItem(arr, 1, {"id": 3, "name": "Moritz Pauls"});
 console.log(arr);
 /*
 [
-    { "id": 1, "name": "Max Mustermann"},
-    {"id": 3, "name": "Moritz Pauls"},
-    { "id": 2, "name": "Karla Kulunder"}
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 3, "name": "Moritz Pauls" },
+    { "id": 2, "name": "Karla Kulunder" }
 ]
 */
 ```
