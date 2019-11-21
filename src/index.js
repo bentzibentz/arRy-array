@@ -9,13 +9,22 @@ import {
     removeDuplicateObjectByValue
 } from './duplicate-objects-by-value';
 
+const removeItem = removeObjectByValue;
+const insertItem = insertAtIndex;
+const getItem = getObjectByValue;
+const updateItemProp = updateObjectByKeyValue;
+const getDuplicates = getDuplicateObjectsByValue;
+const removeDuplicate = removeDuplicateObjectsByValue;
+const removeDuplicates = removeDuplicateObjectByValue;
+const sortItems = sortObjectsByKeyValue;
+
 export {
-    removeObjectByValue,
-    insertAtIndex,
-    getObjectByValue,
-    updateObjectByKeyValue,
-    getDuplicateObjectsByValue,
-    removeDuplicateObjectsByValue,
-    removeDuplicateObjectByValue,
-    sortObjectsByKeyValue
+    removeItem,
+    insertItem,
+    getItem,
+    updateItemProp,
+    getDuplicates,
+    removeDuplicate,
+    removeDuplicates,
+    sortItems
 }

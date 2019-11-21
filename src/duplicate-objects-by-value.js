@@ -1,44 +1,44 @@
-const removeDuplicateObjectByValue = (array, key) => {
+const removeDuplicateObjectByValue = (array, prop) => {
 
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' ) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string' ) {
         return null;
     }
 
     return array
-            .map( e => e[key] )
+            .map( e => e[prop] )
             .map( ( e, i, final ) => final.indexOf(e) === i && i )
             .filter( obj => array[obj] )
             .map( e => array[e] );
 
 };
 
-const removeDuplicateObjectsByValue = (array, key) => {
+const removeDuplicateObjectsByValue = (array, prop) => {
 
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' ) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string' ) {
         return null;
     }
 
     return array
-            .map( e => e[key] )
+            .map( e => e[prop] )
             .map( ( e, i, final ) => final.indexOf(e) === i && i )
             .filter( obj => array[obj] )
             .map( e => array[e] );
 
 };
 
-const getDuplicateObjectsByValue = (array, key) => {
+const getDuplicateObjectsByValue = (array, prop) => {
 
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' ) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string' ) {
         return null;
     }
 
     const duplicateValue = array
-            .map( e => e[key] )
+            .map( e => e[prop] )
             .map( (e, i, final) => final.indexOf(e) !== i && i )
             .filter( obj => array[obj] )
-            .map( e => array[e][key] );
+            .map( e => array[e][prop] );
 
-    return array.filter( obj=> duplicateValue.includes(obj[key]) );
+    return array.filter( obj=> duplicateValue.includes(obj[prop]) );
 
 };
 

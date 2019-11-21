@@ -1,10 +1,10 @@
-const getObjectByValue = (array, key, value) => {
+const getObjectByValue = (array, prop, value) => {
 
-    if ( !array || 0 >= array.length || !key || typeof key !== 'string' || !value ) {
+    if ( !array || 0 >= array.length || !prop || typeof prop !== 'string' || !value ) {
         return null;
     }
 
-    return array.filter( obj => obj[key] === value )
+    return array.filter( obj => obj[prop] === value )
 
 };
 

@@ -29,12 +29,12 @@
     throw new TypeError("Invalid attempt to spread non-iterable instance");
   }
 
-  var removeObjectByValue = function removeObjectByValue(array, key, value) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string') {
+  var removeObjectByValue = function removeObjectByValue(array, prop, value) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string') {
       return null;
     }
     var index = array.findIndex(function (obj) {
-      return obj[key] === value;
+      return obj[prop] === value;
     });
     return index >= 0 ? [].concat(_toConsumableArray(array.slice(0, index)), _toConsumableArray(array.slice(index + 1))) : array;
   };
@@ -49,41 +49,41 @@
     return [].concat(_toConsumableArray(array.slice(0, index)), newItems, _toConsumableArray(array.slice(index)));
   };
 
-  var getObjectByValue = function getObjectByValue(array, key, value) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value) {
+  var getObjectByValue = function getObjectByValue(array, prop, value) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string' || !value) {
       return null;
     }
     return array.filter(function (obj) {
-      return obj[key] === value;
+      return obj[prop] === value;
     });
   };
 
-  var updateObjectByKeyValue = function updateObjectByKeyValue(array, key, value, prop, data) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || !prop || typeof prop !== 'string' || !data) {
+  var updateObjectByKeyValue = function updateObjectByKeyValue(array, prop, value, updateProp, data) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string' || !value || !updateProp || typeof updateProp !== 'string' || !data) {
       return null;
     }
     var updateObj = array.find(function (obj) {
-      return obj[key] === value;
+      return obj[prop] === value;
     });
-    updateObj[prop] = data;
+    updateObj[updateProp] = data;
     return array;
   };
 
-  var sortObjectsByKeyValue = function sortObjectsByKeyValue(array, key, sortBy) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string') {
+  var sortObjectsByKeyValue = function sortObjectsByKeyValue(array, prop, sortBy) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string') {
       return null;
     }
     return array.sort(function (a, b) {
-      return a[key] > b[key] ? 1 : -1;
+      return a[prop] > b[prop] ? 1 : -1;
     });
   };
 
-  var removeDuplicateObjectByValue = function removeDuplicateObjectByValue(array, key) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string') {
+  var removeDuplicateObjectByValue = function removeDuplicateObjectByValue(array, prop) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string') {
       return null;
     }
     return array.map(function (e) {
-      return e[key];
+      return e[prop];
     }).map(function (e, i, final) {
       return final.indexOf(e) === i && i;
     }).filter(function (obj) {
@@ -92,12 +92,12 @@
       return array[e];
     });
   };
-  var removeDuplicateObjectsByValue = function removeDuplicateObjectsByValue(array, key) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string') {
+  var removeDuplicateObjectsByValue = function removeDuplicateObjectsByValue(array, prop) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string') {
       return null;
     }
     return array.map(function (e) {
-      return e[key];
+      return e[prop];
     }).map(function (e, i, final) {
       return final.indexOf(e) === i && i;
     }).filter(function (obj) {
@@ -106,32 +106,41 @@
       return array[e];
     });
   };
-  var getDuplicateObjectsByValue = function getDuplicateObjectsByValue(array, key) {
-    if (!array || 0 >= array.length || !key || typeof key !== 'string') {
+  var getDuplicateObjectsByValue = function getDuplicateObjectsByValue(array, prop) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string') {
       return null;
     }
     var duplicateValue = array.map(function (e) {
-      return e[key];
+      return e[prop];
     }).map(function (e, i, final) {
       return final.indexOf(e) !== i && i;
     }).filter(function (obj) {
       return array[obj];
     }).map(function (e) {
-      return array[e][key];
+      return array[e][prop];
     });
     return array.filter(function (obj) {
-      return duplicateValue.includes(obj[key]);
+      return duplicateValue.includes(obj[prop]);
     });
   };
 
-  exports.getDuplicateObjectsByValue = getDuplicateObjectsByValue;
-  exports.getObjectByValue = getObjectByValue;
-  exports.insertAtIndex = insertAtIndex;
-  exports.removeDuplicateObjectByValue = removeDuplicateObjectByValue;
-  exports.removeDuplicateObjectsByValue = removeDuplicateObjectsByValue;
-  exports.removeObjectByValue = removeObjectByValue;
-  exports.sortObjectsByKeyValue = sortObjectsByKeyValue;
-  exports.updateObjectByKeyValue = updateObjectByKeyValue;
+  var removeItem = removeObjectByValue;
+  var insertItem = insertAtIndex;
+  var getItem = getObjectByValue;
+  var updateItemProp = updateObjectByKeyValue;
+  var getDuplicates = getDuplicateObjectsByValue;
+  var removeDuplicate = removeDuplicateObjectsByValue;
+  var removeDuplicates = removeDuplicateObjectByValue;
+  var sortItems = sortObjectsByKeyValue;
+
+  exports.getDuplicates = getDuplicates;
+  exports.getItem = getItem;
+  exports.insertItem = insertItem;
+  exports.removeDuplicate = removeDuplicate;
+  exports.removeDuplicates = removeDuplicates;
+  exports.removeItem = removeItem;
+  exports.sortItems = sortItems;
+  exports.updateItemProp = updateItemProp;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

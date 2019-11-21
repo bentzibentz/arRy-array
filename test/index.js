@@ -1,12 +1,12 @@
 import {
-    insertAtIndex,
-    removeObjectByValue,
-    getObjectByValue,
-    updateObjectByKeyValue,
-    getDuplicateObjectsByValue,
-    removeDuplicateObjectsByValue,
-    removeDuplicateObjectByValue,
-    sortObjectsByKeyValue
+    removeItem,
+    insertItem,
+    getItem,
+    updateItemProp,
+    getDuplicates,
+    removeDuplicate,
+    removeDuplicates,
+    sortItems
 } from './arRy.mjs';
 
 const testArr = [
@@ -20,23 +20,23 @@ const testArr = [
 console.log('testArr');
 console.log(testArr);
 
-console.log('sortObjectsByKeyValue');
-console.log(sortObjectsByKeyValue(testArr, 'name'));
+console.log('sortItems');
+console.log(sortItems(testArr, 'name'));
 
-console.log('removeObjectByValue');
-console.log(removeObjectByValue(testArr, 'id', 108));
+console.log('removeItem');
+console.log(removeItem(testArr, 'id', 108));
 
-console.log('insertAtIndex');
-console.log(insertAtIndex(testArr, '1', { "id": 109, "name": "It is awesome!" }, { "id": 110, "name": "He is awesome!" }));
+console.log('insertItem');
+console.log(insertItem(testArr, '1', { "id": 109, "name": "It is awesome!" }, { "id": 110, "name": "He is awesome!" }));
 
-console.log('getObjectByValue');
-console.log(getObjectByValue(testArr, 'id', 108));
+console.log('getItem');
+console.log(getItem(testArr, 'id', 108));
 
-console.log('updateObjectByKeyValue');
-console.log(updateObjectByKeyValue(testArr, 'id', 77, 'name', 'Neuer Value'));
+console.log('updateItemProp');
+console.log(updateItemProp(testArr, 'id', 77, 'name', 'Neuer Value'));
 
-console.log('getDuplicateObjectsByValue');
-console.log(getDuplicateObjectsByValue(testArr, 'id'));
+console.log('getDuplicates');
+console.log(getDuplicates(testArr, 'id'));
 
-console.log('removeDuplicateObjectByValue');
-console.log(removeDuplicateObjectByValue(testArr, 'id'));
+console.log('removeDuplicate');
+console.log(removeDuplicate(testArr, 'id'));

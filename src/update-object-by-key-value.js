@@ -1,16 +1,16 @@
-const updateObjectByKeyValue = (array, key, value, prop, data) => {
+const updateObjectByKeyValue = (array, prop, value, updateProp, data) => {
 
-    if (!array || 0 >= array.length || !key || typeof key !== 'string' || !value || !prop || typeof prop !== 'string' || !data ) {
+    if (!array || 0 >= array.length || !prop || typeof prop !== 'string' || !value || !updateProp || typeof updateProp !== 'string' || !data ) {
         return null;
     }
 
     let updateObj = array.find(
         (obj) => {
-            return obj[key] === value
+            return obj[prop] === value
         }
     );
 
-    updateObj[prop] = data;
+    updateObj[updateProp] = data;
 
     return array;
 

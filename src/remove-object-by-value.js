@@ -1,10 +1,10 @@
-const removeObjectByValue = (array, key, value) => {
+const removeObjectByValue = (array, prop, value) => {
 
-    if ( !array || 0 >= array.length || !key || typeof key !== 'string' ) {
+    if ( !array || 0 >= array.length || !prop || typeof prop !== 'string' ) {
         return null;
     }
 
-    const index = array.findIndex(obj => obj[key] === value);
+    const index = array.findIndex(obj => obj[prop] === value);
     return index >= 0 ? [
         ...array.slice(0, index),
         ...array.slice(index + 1)
