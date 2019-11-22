@@ -155,9 +155,9 @@ updateItemProp(arr, 'id', 2, 'name', 'Martin Augustus');
 console.log(arr);
 /*
 [
-   { "id": 1, "name": "Max Mustermann" },
-   { "id": 2, "name": "Martin Augustus" },
-   { "id": 3, "name": "Moritz Pauls" }
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Martin Augustus" },
+    { "id": 3, "name": "Moritz Pauls" }
 ]
 */
 ```
@@ -185,8 +185,8 @@ getDuplicates(arr, 'id');
 console.log(arr);
 /*
 [
-   { "id": 2, "name": "Karla Kulunder" },
-   { "id": 2, "name": "Max Meier" }
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 2, "name": "Max Meier" }
 ]
 */
 ```
@@ -214,9 +214,39 @@ removeDuplicate(arr, 'id');
 console.log(arr);
 /*
 [
-   { "id": 1, "name": "Max Mustermann" },
-   { "id": 2, "name": "Karla Kulunder" },
-   { "id": 3, "name": "Moritz Pauls" },
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 3, "name": "Moritz Pauls" },
+]
+*/
+```
+
+#### Filter array by multiple properties
+Get all items from array by multiple property values.
+```javascript
+filterItems(array, property)
+```
+
+##### Example
+
+```javascript
+import { filterItems } from 'arry-array';
+
+const arr = [
+    { "id": 1, "name":"Mark", "city": "Mannheim", "age": "21" },
+    { "id": 2, "name":"Kathrin", "city": "Berlin", "age": "49" },
+    { "id": 3, "name":"Frank", "city": "Mannheim", "age": "21" },
+    { "id": 4, "name":"Max", "city": "Frankfurt", "age": "38" },
+    { "id": 5, "name":"Lisa", "city": "Mannheim", "age": "23" },
+]
+
+filterItems(arr, { city: "Mannheim", age: "21" });
+
+console.log(arr);
+/*
+[
+    { "id": 1, "name":"Mark", "city": "Mannheim", "age": "21" },
+    { "id": 3, "name":"Frank", "city": "Mannheim", "age": "21" },
 ]
 */
 ```

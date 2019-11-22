@@ -8,7 +8,7 @@ import {
     removeDuplicateObjectsByValue,
     removeDuplicateObjectByValue
 } from './duplicate-objects-by-value';
-import { filterByMultipleProperties } from './filter-by-multibe-properties'
+import { filterByMultipleProperties } from './filter-by-multiple-properties'
 
 const removeItem = removeObjectByValue;
 const insertItem = insertAtIndex;
