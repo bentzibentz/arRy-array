@@ -25,7 +25,7 @@ sortItems(array, property)
 ##### Example
 
 ```javascript
-import { sortItems } from 'arRy';
+import { sortItems } from 'arry-array';
 
 const arr = [
     { "id": 1, "name": "Max Mustermann"},
@@ -57,7 +57,7 @@ removeItem(array, property, value)
 ##### Example
 
 ```javascript
-import { removeItem } from 'arRy';
+import { removeItem } from 'arry-array';
 
 const arr = [
     { "id": 1, "name": "Max Mustermann"},
@@ -87,7 +87,7 @@ insertItem(array, index, ...items)
 ##### Example
 
 ```javascript
-import { insertItem } from 'arRy';
+import { insertItem } from 'arry-array';
 
 const arr = [
     { "id": 1, "name": "Max Mustermann" },
@@ -112,10 +112,54 @@ Get item from by defined property value.
 getItem(array, property, value)
 ```
 
+##### Example
+
+```javascript
+import { getItem } from 'arry-array';
+
+const arr = [
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 3, "name": "Moritz Pauls" }
+]
+
+getItem(arr, 'id', 2);
+
+console.log(arr);
+/*
+[
+    { "id": 2, "name": "Karla Kulunder" }
+]
+*/
+```
+
 #### Update item in array by property value
 Update item in array, find by property value.
 ```javascript
 updateItemProp(array, property, value, propertyToUpdate, data)
+```
+
+##### Example
+
+```javascript
+import { updateItemProp } from 'arry-array';
+
+const arr = [
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 3, "name": "Moritz Pauls" }
+]
+
+updateItemProp(arr, 'id', 2, 'name', 'Martin Augustus');
+
+console.log(arr);
+/*
+[
+   { "id": 1, "name": "Max Mustermann" },
+   { "id": 2, "name": "Martin Augustus" },
+   { "id": 3, "name": "Moritz Pauls" }
+]
+*/
 ```
 
 #### Get duplicate items in array by property
@@ -124,13 +168,60 @@ Get all duplicate items from array by property value.
 getDuplicates(array, property)
 ```
 
+##### Example
+
+```javascript
+import { getDuplicates } from 'arry-array';
+
+const arr = [
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 3, "name": "Moritz Pauls" },
+    { "id": 2, "name": "Max Meier" },
+]
+
+getDuplicates(arr, 'id');
+
+console.log(arr);
+/*
+[
+   { "id": 2, "name": "Karla Kulunder" },
+   { "id": 2, "name": "Max Meier" }
+]
+*/
+```
+
 #### Remove duplicate items in array by property
-Remove all duplicate items from array by property value, except first item.
+Remove all duplicate items from array by property value, except the first one.
 ```javascript
 removeDuplicate(array, property)
 ```
 
-MOre usefull functions comming soon!
+##### Example
+
+```javascript
+import { removeDuplicate } from 'arry-array';
+
+const arr = [
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Karla Kulunder" },
+    { "id": 3, "name": "Moritz Pauls" },
+    { "id": 2, "name": "Max Meier" },
+]
+
+removeDuplicate(arr, 'id');
+
+console.log(arr);
+/*
+[
+   { "id": 1, "name": "Max Mustermann" },
+   { "id": 2, "name": "Karla Kulunder" },
+   { "id": 3, "name": "Moritz Pauls" },
+]
+*/
+```
+
+More usefull functions coming soon :)
 
 Copyright (c) 2019 fabian bentz.
 Released under the [MIT](LICENSE) license.

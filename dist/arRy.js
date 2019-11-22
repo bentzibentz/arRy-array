@@ -1,5 +1,5 @@
 /*!
- * arry v0.0.1
+ * arry-array v0.0.4
  * Copyright (c) 2019-2019 Fabian Bentz
  * License: MIT
  */
