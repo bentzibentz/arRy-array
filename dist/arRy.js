@@ -124,6 +124,18 @@
     });
   };
 
+  var filterByMultipleProperties = function filterByMultipleProperties(arr, filters) {
+    var filterKeys = Object.keys(filters);
+    return arr.filter(function (eachObj) {
+      return filterKeys.every(function (eachKey) {
+        if (!filters[eachKey].length) {
+          return true;
+        }
+        return filters[eachKey].includes(eachObj[eachKey]);
+      });
+    });
+  };
+
   var removeItem = removeObjectByValue;
   var insertItem = insertAtIndex;
   var getItem = getObjectByValue;
@@ -132,7 +144,9 @@
   var removeDuplicate = removeDuplicateObjectsByValue;
   var removeDuplicates = removeDuplicateObjectByValue;
   var sortItems = sortObjectsByKeyValue;
+  var filterItems = filterByMultipleProperties;
 
+  exports.filterItems = filterItems;
   exports.getDuplicates = getDuplicates;
   exports.getItem = getItem;
   exports.insertItem = insertItem;

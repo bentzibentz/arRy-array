@@ -8,6 +8,7 @@ import {
     removeDuplicateObjectsByValue,
     removeDuplicateObjectByValue
 } from './duplicate-objects-by-value';
+import { filterByMultipleProperties } from './filter-by-multibe-properties'
 
 const removeItem = removeObjectByValue;
 const insertItem = insertAtIndex;
@@ -17,6 +18,7 @@ const getDuplicates = getDuplicateObjectsByValue;
 const removeDuplicate = removeDuplicateObjectsByValue;
 const removeDuplicates = removeDuplicateObjectByValue;
 const sortItems = sortObjectsByKeyValue;
+const filterItems = filterByMultipleProperties;
 
 export {
     removeItem,
@@ -26,5 +28,6 @@ export {
     getDuplicates,
     removeDuplicate,
     removeDuplicates,
-    sortItems
+    sortItems,
+    filterItems
 }

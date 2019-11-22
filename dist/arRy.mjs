@@ -118,6 +118,18 @@ var getDuplicateObjectsByValue = function getDuplicateObjectsByValue(array, prop
   });
 };
 
+var filterByMultipleProperties = function filterByMultipleProperties(arr, filters) {
+  var filterKeys = Object.keys(filters);
+  return arr.filter(function (eachObj) {
+    return filterKeys.every(function (eachKey) {
+      if (!filters[eachKey].length) {
+        return true;
+      }
+      return filters[eachKey].includes(eachObj[eachKey]);
+    });
+  });
+};
+
 var removeItem = removeObjectByValue;
 var insertItem = insertAtIndex;
 var getItem = getObjectByValue;
@@ -126,5 +138,6 @@ var getDuplicates = getDuplicateObjectsByValue;
 var removeDuplicate = removeDuplicateObjectsByValue;
 var removeDuplicates = removeDuplicateObjectByValue;
 var sortItems = sortObjectsByKeyValue;
+var filterItems = filterByMultipleProperties;
 
-export { getDuplicates, getItem, insertItem, removeDuplicate, removeDuplicates, removeItem, sortItems, updateItemProp };
+export { filterItems, getDuplicates, getItem, insertItem, removeDuplicate, removeDuplicates, removeItem, sortItems, updateItemProp };
