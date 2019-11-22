@@ -4,7 +4,7 @@
   "description": "arRy is a modular ES6 simplified array modification library.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:bentzibentz/arrAy.git"
+    "url": "git@github.com:bentzibentz/arRy-array.git"
   },
   "author": {
     "name": "Fabian Bentz",
