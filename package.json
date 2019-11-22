@@ -1,7 +1,7 @@
 {
   "name": "arry-array",
-  "version": "0.0.4",
-  "description": "arRy is a modular ES6 simplified array modification library.",
+  "version": "0.0.5",
+  "description": "arRy array is a modular ES6 simplified array modification library.",
   "repository": {
     "type": "git",
     "url": "git@github.com:bentzibentz/arRy-array.git"
