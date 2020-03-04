@@ -23,6 +23,7 @@
   "browser": "dist/arRy.min.js",
   "module": "dist/arRy.mjs",
   "test": "test/arRy.mjs",
+  "types": "dist/types.d.ts",
   "files": [
     "dist/**/*"
   ],
