@@ -1,6 +1,6 @@
 /*!
- * arry-array v0.0.4
- * Copyright (c) 2019-2019 Fabian Bentz
+ * arry-array v0.0.6
+ * Copyright (c) 2019-2020 Fabian Bentz
  * License: MIT
  */
 function _toConsumableArray(arr) {
