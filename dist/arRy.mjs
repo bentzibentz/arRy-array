@@ -1,5 +1,5 @@
 /*!
- * arry-array v0.0.4
+ * arry-array v0.0.5
  * Copyright (c) 2019-2019 Fabian Bentz
  * License: MIT
  */
@@ -130,6 +130,34 @@ var filterByMultipleProperties = function filterByMultipleProperties(arr, filter
   });
 };
 
+var sortObjectsByMultipleKeyValue = function sortObjectsByMultipleKeyValue(array, fields) {
+  if (!array || 0 >= array.length || !fields || 0 >= fields.length) {
+    return null;
+  }
+  array.sort(fieldSorter(fields));
+  return array;
+};
+function fieldSorter(fields) {
+  return function (a, b) {
+    return fields.map(function (o) {
+      var dir = 1;
+      if (o[0] === '-') {
+        dir = -1;
+        o = o.substring(1);
+      }
+      if (a[o] > b[o]) {
+        return dir;
+      }
+      if (a[o] < b[o]) {
+        return -dir;
+      }
+      return 0;
+    }).reduce(function firstNonZeroValue(p, n) {
+      return p ? p : n;
+    }, 0);
+  };
+}
+
 var removeItem = removeObjectByValue;
 var insertItem = insertAtIndex;
 var getItem = getObjectByValue;
@@ -139,5 +167,6 @@ var removeDuplicate = removeDuplicateObjectsByValue;
 var removeDuplicates = removeDuplicateObjectByValue;
 var sortItems = sortObjectsByKeyValue;
 var filterItems = filterByMultipleProperties;
+var sortItemsByKeys = sortObjectsByMultipleKeyValue;
 
-export { filterItems, getDuplicates, getItem, insertItem, removeDuplicate, removeDuplicates, removeItem, sortItems, updateItemProp };
+export { filterItems, getDuplicates, getItem, insertItem, removeDuplicate, removeDuplicates, removeItem, sortItems, sortItemsByKeys, updateItemProp };

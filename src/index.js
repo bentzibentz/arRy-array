@@ -9,6 +9,7 @@ import {
     removeDuplicateObjectByValue
 } from './duplicate-objects-by-value';
 import { filterByMultipleProperties } from './filter-by-multiple-properties'
+import { sortObjectsByMultipleKeyValue } from './sort-objects-by-multiple-key-value';
 
 const removeItem = removeObjectByValue;
 const insertItem = insertAtIndex;
@@ -19,6 +20,7 @@ const removeDuplicate = removeDuplicateObjectsByValue;
 const removeDuplicates = removeDuplicateObjectByValue;
 const sortItems = sortObjectsByKeyValue;
 const filterItems = filterByMultipleProperties;
+const sortItemsByKeys = sortObjectsByMultipleKeyValue;
 
 export {
     removeItem,
@@ -29,5 +31,6 @@ export {
     removeDuplicate,
     removeDuplicates,
     sortItems,
-    filterItems
+    filterItems,
+    sortItemsByKeys
 }

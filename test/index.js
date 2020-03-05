@@ -7,7 +7,8 @@ import {
     removeDuplicate,
     removeDuplicates,
     sortItems,
-    filterItems
+    filterItems,
+    sortItemsByKeys
 } from './arRy.mjs';
 
 const testArr = [
@@ -15,7 +16,17 @@ const testArr = [
     { "id": 99, "name":"Kathrin", "city": "Berlin", "age": "49" },
     { "id": 108, "name":"Frank", "city": "Mannheim", "age": "21" },
     { "id": 99, "name":"Max", "city": "Frankfurt", "age": "38" },
-    { "id": 77, "name":"Lisa", "city": "Mannheim", "age": "23" },
+    { "id": 77, "name":"Lisa", "city": "Mannheim", "age": "23" }
+];
+
+const testDateArr = [
+    { "id": 1, "day":"26", "month": "11", "year": "2019", "name": "Max" },
+    { "id": 2, "day":"03", "month": "12", "year": "2019", "name": "Max" },
+    { "id": 3, "day":"28", "month": "11", "year": "2019", "name": "Max" },
+    { "id": 4, "day":"28", "month": "11", "year": "2019", "name": "Max" },
+    { "id": 5, "day":"23", "month": "12", "year": "2019", "name": "Max" },
+    { "id": 6, "day":"23", "month": "6", "year": "2019", "name": "Max" },
+    { "id": 7, "day":"18", "month": "8", "year": "2019", "name": "Max" }
 ];
 
 console.log('testArr');
@@ -44,4 +55,7 @@ console.log(removeDuplicate(testArr, 'id'));
 
 console.log('filterItems');
 console.log(filterItems(testArr, {city: "Mannheim", age: "21"}));
+
+console.log('sortItemsByKeys');
+console.log(sortItemsByKeys(testDateArr, ['-month', '-day']));
 
