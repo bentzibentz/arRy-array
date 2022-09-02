@@ -1,6 +1,6 @@
 import clean from 'rollup-plugin-clean';
 import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
+import babel from 'rollup-plugin-clean';
 import cleanup from 'rollup-plugin-cleanup';
 import {terser} from 'rollup-plugin-terser';
 
